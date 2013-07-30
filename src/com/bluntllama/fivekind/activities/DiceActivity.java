@@ -231,9 +231,9 @@ public class DiceActivity extends FragmentActivity implements ScorePadFragment.S
             return true;
 
         switch (item.getItemId()) {
-            case R.id.action_help:
+            /*case R.id.action_help:
                 startActivity(new Intent(this, HelpActivity.class));
-                return true;
+                return true;*/
             case R.id.action_donate:
                 // app icon in action bar clicked; go home
                 Intent viewIntent = new Intent("android.intent.action.VIEW", Uri.parse("https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TPK9CY7ZLY6QN&lc=US&item_name=Matt%20Ruffner%20App%20Development&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted"));

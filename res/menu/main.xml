@@ -1,24 +1,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:showAsAction="never"
-        android:visible="false"
-        >
-    </item>
     <item android:id="@+id/action_send_feedback"
           android:title="Send Feedback"
-          android:showAsAction="never"
+          android:visible="true"
             >
     </item>
     <item android:id="@+id/action_donate"
           android:title="Donate"
           android:showAsAction="ifRoom|withText">
-    </item>
-    <item android:id="@+id/action_help"
-          android:title="Help"
-          android:showAsAction="ifRoom|withText"
-            android:visible="false">
     </item>
 
 </menu>
