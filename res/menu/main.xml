@@ -6,6 +6,11 @@
         android:visible="false"
         >
     </item>
+    <item android:id="@+id/action_send_feedback"
+          android:title="Send Feedback"
+          android:showAsAction="never"
+            >
+    </item>
     <item android:id="@+id/action_donate"
           android:title="Donate"
           android:showAsAction="ifRoom|withText">
@@ -14,12 +19,6 @@
           android:title="Help"
           android:showAsAction="ifRoom|withText"
             android:visible="false">
-    </item>
-    <item android:id="@+id/action_refresh"
-          android:title="@string/refresh"
-          android:showAsAction="always"
-          android:visible="false"
-            >
     </item>
 
 </menu>

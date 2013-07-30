@@ -239,6 +239,15 @@ public class DiceActivity extends FragmentActivity implements ScorePadFragment.S
                 Intent viewIntent = new Intent("android.intent.action.VIEW", Uri.parse("https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TPK9CY7ZLY6QN&lc=US&item_name=Matt%20Ruffner%20App%20Development&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted"));
                 startActivity(viewIntent);
                 return true;
+            case R.id.action_send_feedback:
+                Intent send = new Intent(Intent.ACTION_SENDTO);
+                String uriText = "mailto:" + Uri.encode("bluntllama@gmail.com") +
+                        "?subject=" + Uri.encode("5 Dice Feedback");
+                Uri uri = Uri.parse(uriText);
+
+                send.setData(uri);
+                startActivity(Intent.createChooser(send, "Send mail..."));
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
