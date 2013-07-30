@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color
+        name="holo_green"
+        >#AA669900</color>
+    <color name="main_bg">#ffd5d5d5</color>
+    <color name="holo_light_blue">#ff35b5e5</color>
+    <color name="list_bg_color">#e9e9e9</color>
+    <color name="shadow_gray">#ffdfdfdf</color>
+    <color name="holo_red">#ffcc0000</color>
+</resources>

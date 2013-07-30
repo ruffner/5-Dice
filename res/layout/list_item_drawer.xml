@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+android:text="@string/new_game"
+android:id="@+id/textView"
+android:layout_gravity="center_horizontal|top"
+android:paddingLeft="25dp"
+android:textSize="33dp"
+android:focusableInTouchMode="false"
+android:fontFamily="sans-serif-thin"
+        />

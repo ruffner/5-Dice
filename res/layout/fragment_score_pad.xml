@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView"
+        android:background="@color/list_bg_color">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:animateLayoutChanges="true"
+            android:id="@+id/container">
+
+        <TextView
+                android:id="@+id/item_basic_label"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2.00"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center_vertical"
+                android:text="@string/basic_section"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:clickable="false"/>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginBottom="5dp"
+                      android:layout_marginRight="10dp"
+                      android:layout_marginTop="5dp"
+                      android:background="@drawable/list_item_fade"
+                      android:descendantFocusability="blocksDescendants"
+                      android:orientation="horizontal"
+                      android:id="@+id/list_item_aces"
+                      android:clickable="true"
+                      android:onClick="scoreViewOnClick">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/aces"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/list_item_fade"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal"
+                android:id="@+id/list_item_deuces"
+                android:clickable="true"
+                android:onClick="scoreViewOnClick">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/deuces"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/list_item_treys"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/list_item_fade"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:onClick="scoreViewOnClick">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/treys"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/list_item_fade"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal"
+                android:id="@+id/list_item_fours"
+                android:clickable="true"
+                android:onClick="scoreViewOnClick">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/fours"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/list_item_fade"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal"
+                android:id="@+id/list_item_fives"
+                android:clickable="true"
+                android:onClick="scoreViewOnClick">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/fives"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/list_item_fade"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal"
+                android:id="@+id/list_item_sixes"
+                android:clickable="true"
+                android:onClick="scoreViewOnClick">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/sixes"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginBottom="5dp"
+                      android:layout_marginTop="5dp"
+                      android:background="@drawable/item_plain_bg"
+                      android:descendantFocusability="blocksDescendants"
+                      android:id="@+id/list_item_basic_sum"
+                      android:clickable="false"
+                      android:visibility="gone">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/total"
+                    android:textAppearance="?android:attr/textAppearance" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/item_plain_bg"
+                android:descendantFocusability="blocksDescendants"
+                android:id="@+id/list_item_basic_bonus"
+                android:clickable="false"
+                android:visibility="gone">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/bonus"
+                    android:textAppearance="?android:attr/textAppearance" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/item_plain_bg"
+                android:descendantFocusability="blocksDescendants"
+                android:id="@+id/list_item_basic_total"
+                android:clickable="false"
+                android:visibility="gone">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/basic_section_total"
+                    android:textAppearance="?android:attr/textAppearance" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2.00"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center_vertical"
+                android:text="LOWER SECTION"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/list_item_lower_label"
+                android:clickable="false"/>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/list_item_fade"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal"
+                android:id="@+id/list_item_two_pair"
+                android:clickable="true"
+                android:onClick="scoreViewOnClick">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/two_pair_same"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/list_item_fade"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal"
+                android:id="@+id/list_item_three_kind"
+                android:clickable="true"
+                android:onClick="scoreViewOnClick">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/three_kind"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/list_item_fade"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal"
+                android:id="@+id/list_item_straight"
+                android:clickable="true"
+                android:onClick="scoreViewOnClick">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/straight"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/list_item_fade"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal"
+                android:id="@+id/list_item_flush"
+                android:clickable="true"
+                android:onClick="scoreViewOnClick">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/flush"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/list_item_fade"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal"
+                android:id="@+id/list_item_full_house"
+                android:clickable="true"
+                android:onClick="scoreViewOnClick">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/full_house"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/list_item_fade"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal"
+                android:id="@+id/list_item_full_house_same"
+                android:clickable="true"
+                android:onClick="scoreViewOnClick">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/full_house_same"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/list_item_fade"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal"
+                android:id="@+id/list_item_four_kind"
+                android:clickable="true"
+                android:onClick="scoreViewOnClick">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/four_kind"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/list_item_fade"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal"
+                android:id="@+id/list_item_yarborough"
+                android:clickable="true"
+                android:onClick="scoreViewOnClick">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/yarborough"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/list_item_fade"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal"
+                android:id="@+id/list_item_five_kind"
+                android:clickable="true"
+                android:onClick="scoreViewOnClick">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/five_kind"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif-thin"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginBottom="5dp"
+                      android:layout_marginTop="5dp"
+                      android:background="@drawable/item_plain_bg"
+                      android:descendantFocusability="blocksDescendants"
+                      android:id="@+id/list_item_lower_total"
+                      android:clickable="false"
+                      android:visibility="gone">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/lower_total"
+                    android:textAppearance="?android:attr/textAppearance" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/item_plain_bg"
+                android:descendantFocusability="blocksDescendants"
+                android:id="@+id/list_item_basic_total_lower"
+                android:clickable="false"
+                android:visibility="gone">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/basic_section_total"
+                    android:textAppearance="?android:attr/textAppearance" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/item_plain_bg"
+                android:descendantFocusability="blocksDescendants"
+                android:focusableInTouchMode="false"
+                android:id="@+id/list_item_game_total"
+                android:clickable="false"
+                android:visibility="gone">
+
+            <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_weight="2.00"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center_vertical"
+                    android:text="@string/game_total"
+                    android:textAppearance="?android:attr/textAppearance" />
+
+            <TextView
+                    android:id="@+id/possible_points"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight=".5"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/blank"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</ScrollView>

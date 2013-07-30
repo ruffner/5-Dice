@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:layout_marginLeft="5dp"
+              android:layout_marginRight="5dp"
+              android:layout_marginTop="5dp"
+              android:layout_marginBottom="5dp"
+              android:background="@drawable/list_item_fade"
+              android:gravity="center_horizontal"
+              android:animateLayoutChanges="true">
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <TextView
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/player_name_label"
+                android:id="@+id/player_name"
+                android:layout_gravity="center_horizontal|top"
+                android:gravity="center_vertical"
+                android:layout_weight="2"
+                android:paddingLeft="20dp"
+                android:layout_marginBottom="2dp"
+                android:textColor="@android:color/background_dark"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/fifteen"
+                android:id="@+id/game_score"
+                android:gravity="right"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@android:color/black"/>
+
+    </LinearLayout>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/blank"
+            android:id="@+id/date_view"
+            android:layout_gravity="left|center_vertical"
+            android:paddingLeft="25dp"
+            android:layout_marginBottom="2dp"
+            android:visibility="gone"/>
+
+</LinearLayout>

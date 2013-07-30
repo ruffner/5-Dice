@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">5 Dice</string>
+    <string name="action_settings">Settings</string>
+    <string name="roll">Roll</string>
+    <string name="content_desc_dice"></string>
+    <string name="blank"></string>
+    <string name="new_game">New Game</string>
+
+    <string-array name="rolls_left">
+        <item>Choose Score</item>
+        <item>1 roll left</item>
+        <item>2 rolls left</item>
+        <item>3 rolls left</item>
+    </string-array>
+
+    <string name="rolling">End Roll</string>
+
+    <string-array name="score_labels">
+        <item>BASIC SECTION</item>
+        <item>ACES</item>
+        <item>DEUCES</item>
+        <item>TREYS</item>
+        <item>FOURS</item>
+        <item>FIVES</item>
+        <item>SIXES</item>
+        <item>TOTAL</item>
+        <item>BONUS</item>
+        <item>BASIC SECTION TOTAL</item>
+        <item>LOWER SECTION</item>
+        <item>2 PAIR SAME COLOR</item>
+        <item>3 OF A KIND</item>
+        <item>STRAIGHT</item>
+        <item>FLUSH</item>
+        <item>FULL HOUSE</item>
+        <item>FULL HOUSE SAME</item>
+        <item>4 OF A KIND</item>
+        <item>YARBOROUGH</item>
+        <item>5 OF A KIND</item>
+        <item>LOWER SECTION TOTAL</item>
+        <item>BASIC SECTION TOTAL</item>
+        <item>GAME TOTAL</item>
+    </string-array>
+
+    <string name="turns_remaining">Turns remaining:</string>
+    <string name="fifteen">15</string>
+    <string name="game_over">Game Over</string>
+    <string name="title_activity_start">StartActivity</string>
+    <string name="label_solo_gmae">Play Solo</string>
+    <string name="label_pass_game">Multiplayer Game</string>
+    <string name="highscore_label">High Scores</string>
+    <string name="player_name_label">Player name</string><string name="label_resume_game">Resume Game</string><string name="label_leaderboard">Leader  Board</string><string name="label_checkbox_highscore">Send to Leader Board?</string>
+    <string name="label_send_score">Record Score</string><string name="empy">No High Scores... :(</string>
+    <string name="no_connection">Connection failed, please try again</string>
+    <string name="refresh">Refresh</string>
+    <string name="actions">Actions</string>
+
+    <string-array name="actions_array">
+        <item>Send to Leader Board</item>
+        <item>Delete score</item>
+    </string-array>
+
+    <string-array name="drawer_titles">
+        <item>Resume</item>
+        <item>New Game</item>
+        <item>Local Scores</item>
+        <item>Online Leaders</item>
+    </string-array>
+
+    <string name="basic_section">BASIC SECTION</string><string name="aces">ACES</string><string name="basic_section_total">BASIC SECTION TOTAL</string><string name="bonus">BONUS</string><string name="total">TOTAL</string><string name="sixes">SIXES</string><string name="fives">FIVES</string><string name="fours">FOURS</string><string name="treys">TREYS</string><string name="deuces">DEUCES</string><string name="two_pair"/><string name="two_pair_same">2 PAIR SAME COLOR</string><string name="three_kind">3 OF A KIND</string><string name="straight">STRAIGHT</string><string name="flush">FLUSH</string><string name="full_house">FULL HOUSE</string><string name="full_house_same">FULL HOUSE SAME COLOR</string><string name="four_kind">4 OF A KIND</string><string name="yarborough">YARBOROUGH</string><string name="five_kind">5 OF A KIND</string><string name="lower_total">LOWER SECTION TOTAL</string><string name="game_total">GAME TOTAL</string><string name="num_players">Number of players:</string>
+
+    <string name="drawer_open">Open menu</string>
+    <string name="drawer_close">Close menu</string><string name="label_new">New</string><string name="label_remove">Remove</string>
+</resources>
