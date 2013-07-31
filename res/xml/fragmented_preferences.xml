@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:title="Game play">
+
+        <CheckBoxPreference
+                android:key="pref_one_click_roll"
+                android:title="One click roll"
+                android:defaultValue="false"
+                android:summary="Dice stop rolling on their own" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="Look and Feel">
+
+        <ListPreference
+                android:defaultValue="screen_bottom"
+                android:key="pref_dice_layout"
+                android:title="Dice position"
+                android:entries="@array/prefs_dice_layout_titles"
+                android:entryValues="@array/prefs_dice_layout_values"
+                android:dialogTitle="Where to put the dice" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

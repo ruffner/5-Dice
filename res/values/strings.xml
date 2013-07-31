@@ -43,15 +43,13 @@
         <item>GAME TOTAL</item>
     </string-array>
 
-    <string name="turns_remaining">Turns remaining:</string>
-    <string name="fifteen">15</string>
     <string name="game_over">Game Over</string>
-    <string name="title_activity_start">StartActivity</string>
-    <string name="label_solo_gmae">Play Solo</string>
-    <string name="label_pass_game">Multiplayer Game</string>
-    <string name="highscore_label">High Scores</string>
-    <string name="player_name_label">Player name</string><string name="label_resume_game">Resume Game</string><string name="label_leaderboard">Leader  Board</string><string name="label_checkbox_highscore">Send to Leader Board?</string>
-    <string name="label_send_score">Record Score</string><string name="empy">No High Scores... :(</string>
+    <string name="player_name_label">Player name</string>
+    <string name="label_resume_game">Resume Game</string>
+    <string name="label_leaderboard">Leader Board</string>
+    <string name="label_checkbox_highscore">Send to Leader Board?</string>
+    <string name="label_send_score">Record Score</string>
+    <string name="empy">No High Scores... :(</string>
     <string name="no_connection">Connection failed, please try again</string>
     <string name="refresh">Refresh</string>
     <string name="actions">Actions</string>
@@ -71,5 +69,18 @@
     <string name="basic_section">BASIC SECTION</string><string name="aces">ACES</string><string name="basic_section_total">BASIC SECTION TOTAL</string><string name="bonus">BONUS</string><string name="total">TOTAL</string><string name="sixes">SIXES</string><string name="fives">FIVES</string><string name="fours">FOURS</string><string name="treys">TREYS</string><string name="deuces">DEUCES</string><string name="two_pair"/><string name="two_pair_same">2 PAIR SAME COLOR</string><string name="three_kind">3 OF A KIND</string><string name="straight">STRAIGHT</string><string name="flush">FLUSH</string><string name="full_house">FULL HOUSE</string><string name="full_house_same">FULL HOUSE SAME COLOR</string><string name="four_kind">4 OF A KIND</string><string name="yarborough">YARBOROUGH</string><string name="five_kind">5 OF A KIND</string><string name="lower_total">LOWER SECTION TOTAL</string><string name="game_total">GAME TOTAL</string><string name="num_players">Number of players:</string>
 
     <string name="drawer_open">Open menu</string>
-    <string name="drawer_close">Close menu</string><string name="label_new">New</string><string name="label_remove">Remove</string>
+    <string name="drawer_close">Close menu</string>
+    <string name="label_new">New</string>
+    <string name="label_remove">Remove</string>
+
+    <string-array name="prefs_dice_layout_titles">
+        <item>Dice at top of screen</item>
+        <item>Dice above roll button</item>
+    </string-array>
+
+    <string-array name="prefs_dice_layout_values">
+        <item>screen_top</item>
+        <item>screen_bottom</item>
+    </string-array>
+
 </resources>

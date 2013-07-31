@@ -25,6 +25,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activities.PreferenceWithHeaders"
+            android:label="@string/action_settings">
+
+        </activity>
+
+        <activity
+                android:name=".activities.HelpActivity"
+                android:label="5 Dice Help">
+
+        </activity>
+
         </application>
 
 </manifest>

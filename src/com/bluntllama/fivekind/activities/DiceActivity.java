@@ -3,6 +3,8 @@ package com.bluntllama.fivekind.activities;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v4.app.ActionBarDrawerToggle;import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.content.ContentValues;
@@ -72,6 +74,7 @@ public class DiceActivity extends FragmentActivity implements ScorePadFragment.S
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
 
+    private SharedPreferences sharedPrefs;
     private SharedPreferences mPrefs;
     private ScorePadFragment scorePad;
     private HighScoreDataSource mDataSource;
@@ -83,6 +86,7 @@ public class DiceActivity extends FragmentActivity implements ScorePadFragment.S
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        PreferenceManager.setDefaultValues(this, R.xml.fragmented_preferences, false);
         setContentView(R.layout.activity_dice);
 
         mDrawertTitles = getResources().getStringArray(R.array.drawer_titles);
@@ -122,6 +126,7 @@ public class DiceActivity extends FragmentActivity implements ScorePadFragment.S
 
         mDataSource = new HighScoreDataSource(this);
         mPrefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         rollsLeftLabels = getResources().getStringArray(R.array.rolls_left);
 
@@ -247,6 +252,9 @@ public class DiceActivity extends FragmentActivity implements ScorePadFragment.S
 
                 send.setData(uri);
                 startActivity(Intent.createChooser(send, "Send mail..."));
+                return true;
+            case R.id.action_settings:
+                startActivity(new Intent(this, PreferenceWithHeaders.class));
                 return true;
         }
 
@@ -479,6 +487,17 @@ public class DiceActivity extends FragmentActivity implements ScorePadFragment.S
                 if (!i.isSelected)
                     i.anim.start();
             isRolling = true;
+            if(sharedPrefs.getBoolean("pref_one_click_roll", false)) {
+                Handler handler = new Handler();
+                final Runnable r = new Runnable() {
+                    public void run() {
+                        if(isRolling)
+                            mRollButton.callOnClick();
+                    }
+                };
+
+                handler.postDelayed(r, 400);
+            }
         } else {
             Random r = new Random();
             for (Die i : mDice)
@@ -490,6 +509,8 @@ public class DiceActivity extends FragmentActivity implements ScorePadFragment.S
             isRolling = false;
             scorePad.rollOver(mDice, rollsLeft);
         }
+
+
 
         if (rollsLeft == 0)
             turnOver();

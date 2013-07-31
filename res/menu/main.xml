@@ -5,8 +5,12 @@
             >
     </item>
     <item android:id="@+id/action_donate"
-          android:title="Donate"
-          android:showAsAction="ifRoom|withText">
+          android:title="Donate $1"
+          android:showAsAction="never">
     </item>
+    <item android:id="@+id/action_settings"
+          android:title="@string/action_settings"
+          android:showAsAction="never"
+          ></item>
 
 </menu>

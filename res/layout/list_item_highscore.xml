@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/fifteen"
+                android:text="@string/blank"
                 android:id="@+id/game_score"
                 android:gravity="right"
                 android:layout_marginTop="8dp"
