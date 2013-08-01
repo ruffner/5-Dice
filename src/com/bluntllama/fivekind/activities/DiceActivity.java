@@ -208,6 +208,26 @@ public class DiceActivity extends FragmentActivity implements ScorePadFragment.S
     protected void onResume() {
         super.onResume();
 
+        ////////
+        boolean large = ((getBaseContext().getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE);
+        boolean xlarge = ((getBaseContext().getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == 4);
+        boolean isTablet = large || xlarge;
+
+        ViewGroup.LayoutParams params = findViewById(R.id.layout_dice).getLayoutParams();
+        int rotation = getWindowManager().getDefaultDisplay().getRotation();
+        if(!isTablet) {
+            if(rotation == 0 | rotation == 2)
+                params.height = mDice[0].imageView.getWidth();
+            else
+                params.width = mDice[0].imageView.getHeight();
+        } else {
+            if(rotation == 0 | rotation == 2)
+                params.width = mDice[0].imageView.getHeight();
+            else
+                params.height = mDice[0].imageView.getWidth();
+        }
+        //////////
+
         if(gameOver && !scoreRecorded)
             findViewById(R.id.score_record_button).setVisibility(View.VISIBLE);
 
