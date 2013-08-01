@@ -1,6 +1,7 @@
 package com.bluntllama.fivekind.fragments;
 
 import android.app.ActionBar;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -43,6 +44,9 @@ public class OnlineLeaderBoardFragment extends ListFragment {
     private Button mRefreshButton;
     private JSONArrayAdapter mAdapter;
     private JSONObject info;
+    private Button mButton0;
+    private Button mButton1;
+    private Button mButton2;
     LeaderBoardGetter mGetter;
 
     @Override
@@ -52,6 +56,10 @@ public class OnlineLeaderBoardFragment extends ListFragment {
         progressBar = (ProgressBar) rootView.findViewById(R.id.progressBar);
         noConnectionView = (TextView) rootView.findViewById(R.id.no_connection);
 
+        mButton0 = (Button)rootView.findViewById(R.id.timeframe_today);
+        mButton1 = (Button)rootView.findViewById(R.id.timeframe_this_week);
+        mButton2 = (Button)rootView.findViewById(R.id.timeframe_all_time);
+
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,17 +68,20 @@ public class OnlineLeaderBoardFragment extends ListFragment {
                 int dif;
                 switch (view.getId()) {
                     case R.id.timeframe_today:
+                        setButtonBg(0);
                         dif = (rightNow.get(Calendar.HOUR_OF_DAY) * 60 * 60 * 1000) + (rightNow.get(Calendar.MINUTE) * 60 * 1000) + (rightNow.get(Calendar.SECOND) * 1000) + rightNow.get(Calendar.MILLISECOND);
                         Log.d("5 Dice", "dif is " + dif);
                         Log.d("5 Dice", "url for today is: " + (rightNow.getTimeInMillis()-dif));
                         mGetter.execute("http://mshsprojects.net/matt/highscores.php?time=" + (rightNow.getTimeInMillis()-dif));
                         break;
                     case R.id.timeframe_this_week:
+                        setButtonBg(1);
                         dif = ((rightNow.get(Calendar.DAY_OF_WEEK)-1) * 24 * 60 * 60 * 1000) + (rightNow.get(Calendar.HOUR_OF_DAY) * 60 * 60 * 1000) + (rightNow.get(Calendar.MINUTE) * 60 * 1000) + (rightNow.get(Calendar.SECOND) * 1000) + rightNow.get(Calendar.MILLISECOND);
                         Log.d("5 Dice", "url for this week is: " + rightNow.getTimeInMillis());
                         mGetter.execute("http://mshsprojects.net/matt/highscores.php?time=" + (rightNow.getTimeInMillis()-dif));
                         break;
                     case R.id.timeframe_all_time:
+                        setButtonBg(2);
                         mGetter.execute("http://mshsprojects.net/matt/highscores.php?id=100");
                         break;
                 }
@@ -91,6 +102,7 @@ public class OnlineLeaderBoardFragment extends ListFragment {
         Log.d("5 Dice", "url for this week is: " + rightNow.getTimeInMillis());
         mGetter.execute("http://mshsprojects.net/matt/highscores.php?time=" + (rightNow.getTimeInMillis()-dif));
 
+        setButtonBg(1);
         super.onViewCreated(view, savedInstanceState);
     }
 
@@ -185,6 +197,26 @@ public class OnlineLeaderBoardFragment extends ListFragment {
                     progressBar.setVisibility(View.GONE);
                 }
             }
+        }
+    }
+
+    private void setButtonBg(int id) {
+        switch (id) {
+            case 0:
+                mButton0.setBackgroundColor(getResources().getColor(R.color.holo_light_blue));
+                mButton1.setBackgroundColor(Color.TRANSPARENT);
+                mButton2.setBackgroundColor(Color.TRANSPARENT);
+                break;
+            case 1:
+                mButton0.setBackgroundColor(Color.TRANSPARENT);
+                mButton1.setBackgroundColor(getResources().getColor(R.color.holo_light_blue));
+                mButton2.setBackgroundColor(Color.TRANSPARENT);
+                break;
+            case 2:
+                mButton0.setBackgroundColor(Color.TRANSPARENT);
+                mButton1.setBackgroundColor(Color.TRANSPARENT);
+                mButton2.setBackgroundColor(getResources().getColor(R.color.holo_light_blue));
+                break;
         }
     }
 }
