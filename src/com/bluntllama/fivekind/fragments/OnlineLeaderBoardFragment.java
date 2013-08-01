@@ -1,5 +1,6 @@
 package com.bluntllama.fivekind.fragments;
 
+import android.app.ActionBar;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -7,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -27,6 +29,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.util.Calendar;
 
 public class OnlineLeaderBoardFragment extends ListFragment {
     // For the json adapter, specify which columns go into which views
@@ -37,6 +40,7 @@ public class OnlineLeaderBoardFragment extends ListFragment {
 
     private ProgressBar progressBar;
     private TextView noConnectionView;
+    private Button mRefreshButton;
     private JSONArrayAdapter mAdapter;
     private JSONObject info;
     LeaderBoardGetter mGetter;
@@ -47,13 +51,45 @@ public class OnlineLeaderBoardFragment extends ListFragment {
 
         progressBar = (ProgressBar) rootView.findViewById(R.id.progressBar);
         noConnectionView = (TextView) rootView.findViewById(R.id.no_connection);
+
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar rightNow = Calendar.getInstance();
+                mGetter = new LeaderBoardGetter();
+                int dif;
+                switch (view.getId()) {
+                    case R.id.timeframe_today:
+                        dif = (rightNow.get(Calendar.HOUR_OF_DAY) * 60 * 60 * 1000) + (rightNow.get(Calendar.MINUTE) * 60 * 1000) + (rightNow.get(Calendar.SECOND) * 1000) + rightNow.get(Calendar.MILLISECOND);
+                        Log.d("5 Dice", "dif is " + dif);
+                        Log.d("5 Dice", "url for today is: " + (rightNow.getTimeInMillis()-dif));
+                        mGetter.execute("http://mshsprojects.net/matt/highscores.php?time=" + (rightNow.getTimeInMillis()-dif));
+                        break;
+                    case R.id.timeframe_this_week:
+                        dif = ((rightNow.get(Calendar.DAY_OF_WEEK)-1) * 24 * 60 * 60 * 1000) + (rightNow.get(Calendar.HOUR_OF_DAY) * 60 * 60 * 1000) + (rightNow.get(Calendar.MINUTE) * 60 * 1000) + (rightNow.get(Calendar.SECOND) * 1000) + rightNow.get(Calendar.MILLISECOND);
+                        Log.d("5 Dice", "url for this week is: " + rightNow.getTimeInMillis());
+                        mGetter.execute("http://mshsprojects.net/matt/highscores.php?time=" + (rightNow.getTimeInMillis()-dif));
+                        break;
+                    case R.id.timeframe_all_time:
+                        mGetter.execute("http://mshsprojects.net/matt/highscores.php");
+                        break;
+                }
+            }
+        };
+        rootView.findViewById(R.id.timeframe_all_time).setOnClickListener(listener);
+        rootView.findViewById(R.id.timeframe_this_week).setOnClickListener(listener);
+        rootView.findViewById(R.id.timeframe_today).setOnClickListener(listener);
+
         return rootView;
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         mGetter = new LeaderBoardGetter();
-        mGetter.execute("http://mshsprojects.net/matt/highscores.php?id=50");
+        Calendar rightNow = Calendar.getInstance();
+        long dif = ((rightNow.get(Calendar.DAY_OF_WEEK)-1) * 24 * 60 * 60 * 1000) + (rightNow.get(Calendar.HOUR_OF_DAY) * 60 * 60 * 1000) + (rightNow.get(Calendar.MINUTE) * 60 * 1000) + (rightNow.get(Calendar.SECOND) * 1000) + rightNow.get(Calendar.MILLISECOND);
+        Log.d("5 Dice", "url for this week is: " + rightNow.getTimeInMillis());
+        mGetter.execute("http://mshsprojects.net/matt/highscores.php?time=" + (rightNow.getTimeInMillis()-dif));
 
         super.onViewCreated(view, savedInstanceState);
     }
@@ -65,17 +101,14 @@ public class OnlineLeaderBoardFragment extends ListFragment {
         super.onDetach();
     }
 
-    public void refresh() {
-        mGetter = new LeaderBoardGetter();
-        mGetter.execute("http://mshsprojects.net/matt/highscores.php?id=50");
-    }
-
     public class LeaderBoardGetter extends AsyncTask<String, Void, JSONObject> {
 
         @Override
         protected void onPreExecute() {
             getListView().setVisibility(View.GONE);
+            getActivity().findViewById(android.R.id.empty).setVisibility(View.GONE);
             progressBar.setVisibility(View.VISIBLE);
+            noConnectionView.setVisibility(View.GONE);
         }
 
         @Override
@@ -149,6 +182,7 @@ public class OnlineLeaderBoardFragment extends ListFragment {
                     getListView().setVisibility(View.VISIBLE);
                 } else {
                     noConnectionView.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.GONE);
                 }
             }
         }
