@@ -27,7 +27,7 @@
             android:title="Look and Feel">
 
         <ListPreference
-                android:defaultValue="screen_bottom"
+                android:defaultValue="screen_top"
                 android:summary="Restart app to take effect"
                 android:key="pref_dice_layout"
                 android:title="Dice position"
