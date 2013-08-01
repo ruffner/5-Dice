@@ -28,6 +28,19 @@
             android:visibility="gone"
             android:layout_weight="1"/>
 
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingTop="15dp"
+            android:layout_gravity="center_horizontal"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="No high scores..."
+            android:layout_weight="1"
+            android:id="@android:id/empty"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:visibility="gone"/>
+
     <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -42,17 +55,6 @@
             android:visibility="visible"
             android:headerDividersEnabled="false"
             android:layout_weight="1"/>
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="No high scores..."
-            android:layout_weight="2"
-            android:id="@android:id/empty"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:visibility="gone"/>
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -83,7 +85,7 @@
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="All TIme"
+                android:text="All Time"
                 android:id="@+id/timeframe_all_time"
                 android:layout_weight="1"
                 style="@android:style/Holo.ButtonBar"
