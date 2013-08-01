@@ -21,6 +21,7 @@ local.properties
 
 # Android Studio files
 .idea/
+*.iml
 
 # Os specific files
 .DS_Store
