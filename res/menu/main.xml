@@ -2,6 +2,7 @@
     <item android:id="@+id/action_send_feedback"
           android:title="@string/label_send_feedback"
           android:visible="true"
+          android:showAsAction="never"
             >
     </item>
     <item android:id="@+id/action_donate"
@@ -11,6 +12,11 @@
     <item android:id="@+id/action_settings"
           android:title="@string/action_settings"
           android:showAsAction="never"
-          ></item>
+          >
+    </item>
+    <item android:id="@+id/action_help"
+          android:title="Help"
+          android:showAsAction="never">
+    </item>
 
 </menu>

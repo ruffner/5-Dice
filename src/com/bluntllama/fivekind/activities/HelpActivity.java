@@ -2,6 +2,9 @@ package com.bluntllama.fivekind.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 
 import com.bluntllama.fivekind.R;
 
@@ -15,6 +18,27 @@ public class HelpActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help);
 
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
+
+        WebView browser = (WebView)findViewById(R.id.webView);
+
+        WebSettings settings = browser.getSettings();
+        settings.setJavaScriptEnabled(true);
+
+        browser.loadUrl("file:///android_asset/help.html");
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

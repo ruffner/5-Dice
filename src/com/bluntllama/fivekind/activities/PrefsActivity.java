@@ -3,20 +3,18 @@ package com.bluntllama.fivekind.activities;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
-import android.util.Log;
-import android.widget.Button;
+import android.view.MenuItem;
 
 import com.bluntllama.fivekind.R;
 
-import java.util.List;
-
-public class PreferenceWithHeaders extends PreferenceActivity {
-    static final String TAG = "5 Dice";
+public class PrefsActivity extends PreferenceActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
 
         // Display the fragment as the main content.
         getFragmentManager().beginTransaction()
@@ -24,6 +22,17 @@ public class PreferenceWithHeaders extends PreferenceActivity {
                 .commit();
 
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     public static class SettingsFragment extends PreferenceFragment {
