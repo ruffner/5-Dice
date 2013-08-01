@@ -8,9 +8,18 @@
 
         <CheckBoxPreference
                 android:key="pref_one_click_roll"
-                android:title="One click roll"
+                android:title="@string/prefs_label_one_click_roll"
                 android:defaultValue="false"
-                android:summary="Dice stop rolling on their own" />
+                android:summary="@string/prefs_summary_one_click_roll" />
+
+        <ListPreference
+            android:key="pref_roll_time"
+            android:defaultValue="500"
+            android:title="@string/prefs_label_dice_roll_time"
+            android:dependency="pref_one_click_roll"
+            android:summary="@string/prefs_summary_dice_roll_time"
+            android:entries="@array/prefs_roll_time_labels"
+            android:entryValues="@array/prefs_roll_time_values"/>
 
     </PreferenceCategory>
 
@@ -19,6 +28,7 @@
 
         <ListPreference
                 android:defaultValue="screen_bottom"
+                android:summary="Restart app to take effect"
                 android:key="pref_dice_layout"
                 android:title="Dice position"
                 android:entries="@array/prefs_dice_layout_titles"

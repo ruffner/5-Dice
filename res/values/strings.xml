@@ -15,7 +15,8 @@
         <item>3 rolls left</item>
     </string-array>
 
-    <string name="rolling">End Roll</string>
+    <string name="rolling">Rolling</string>
+    <string name="end_roll">End Roll</string>
 
     <string-array name="score_labels">
         <item>BASIC SECTION</item>
@@ -72,6 +73,12 @@
     <string name="drawer_close">Close menu</string>
     <string name="label_new">New</string>
     <string name="label_remove">Remove</string>
+    <string name="donate_label">Donate via PayPal</string>
+    <string name="label_send_feedback">Send Feedback</string>
+    <string name="prefs_label_dice_roll_time">Dice roll time</string>
+    <string name="prefs_summary_dice_roll_time">How long the dice roll after the roll button was clicked</string>
+    <string name="prefs_label_one_click_roll">One click roll</string>
+    <string name="prefs_summary_one_click_roll">Dice stop rolling automatically</string>
 
     <string-array name="prefs_dice_layout_titles">
         <item>Dice at top of screen</item>
@@ -81,6 +88,32 @@
     <string-array name="prefs_dice_layout_values">
         <item>screen_top</item>
         <item>screen_bottom</item>
+    </string-array>
+
+    <string-array name="prefs_roll_time_labels">
+        <item>100 ms</item>
+        <item>200 ms</item>
+        <item>300 ms</item>
+        <item>400 ms</item>
+        <item>500 ms</item>
+        <item>600 ms</item>
+        <item>700 ms</item>
+        <item>800 ms</item>
+        <item>900 ms</item>
+        <item>1 sec</item>
+    </string-array>
+
+    <string-array name="prefs_roll_time_values">
+        <item>100</item>
+        <item>200</item>
+        <item>300</item>
+        <item>400</item>
+        <item>500</item>
+        <item>600</item>
+        <item>700</item>
+        <item>800</item>
+        <item>900</item>
+        <item>1000</item>
     </string-array>
 
 </resources>

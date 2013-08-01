@@ -87,7 +87,11 @@ public class DiceActivity extends FragmentActivity implements ScorePadFragment.S
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         PreferenceManager.setDefaultValues(this, R.xml.fragmented_preferences, false);
-        setContentView(R.layout.activity_dice);
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        if(sharedPrefs.getString("pref_dice_layout", "screen_top").equals("screen_bottom"))
+            setContentView(R.layout.activity_dice_lower);
+        else
+            setContentView(R.layout.activity_dice);
 
         mDrawertTitles = getResources().getStringArray(R.array.drawer_titles);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -126,7 +130,6 @@ public class DiceActivity extends FragmentActivity implements ScorePadFragment.S
 
         mDataSource = new HighScoreDataSource(this);
         mPrefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         rollsLeftLabels = getResources().getStringArray(R.array.rolls_left);
 
@@ -468,7 +471,10 @@ public class DiceActivity extends FragmentActivity implements ScorePadFragment.S
             @Override
             public void onClick(View view) {
                 if (!isRolling) {
-                    mRollButton.setText(R.string.rolling);
+                    if(sharedPrefs.getBoolean("pref_one_click_roll", false))
+                        mRollButton.setText(R.string.rolling);
+                    else
+                        mRollButton.setText(R.string.end_roll);
                 } else {
                     mRollButton.setText(R.string.roll);
                     rollsLeft--;
@@ -496,9 +502,12 @@ public class DiceActivity extends FragmentActivity implements ScorePadFragment.S
                     }
                 };
 
-                handler.postDelayed(r, 400);
+                handler.postDelayed(r, Integer.parseInt(sharedPrefs.getString("pref_roll_time", "500")));
+                mRollButton.setEnabled(false);
             }
         } else {
+            if(sharedPrefs.getBoolean("pref_one_click_roll", false))
+                mRollButton.setEnabled(true);
             Random r = new Random();
             for (Die i : mDice)
                 if (!i.isSelected) {

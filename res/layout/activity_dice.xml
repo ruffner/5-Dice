@@ -10,7 +10,6 @@
         android:layout_height="match_parent"
         android:animateLayoutChanges="true">
 
-    <!-- The main content view -->
     <LinearLayout
             android:id="@+id/layout_dice"
             android:layout_width="match_parent"
@@ -93,6 +92,8 @@
                 android:scaleType="fitXY"/>
 
     </LinearLayout>
+
+    <!-- The main content view -->
 
     <FrameLayout
             android:id="@+id/content_frame"
