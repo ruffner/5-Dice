@@ -71,7 +71,7 @@ public class OnlineLeaderBoardFragment extends ListFragment {
                         mGetter.execute("http://mshsprojects.net/matt/highscores.php?time=" + (rightNow.getTimeInMillis()-dif));
                         break;
                     case R.id.timeframe_all_time:
-                        mGetter.execute("http://mshsprojects.net/matt/highscores.php");
+                        mGetter.execute("http://mshsprojects.net/matt/highscores.php?id=100");
                         break;
                 }
             }
