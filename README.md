@@ -1,6 +1,6 @@
-[5-Dice](https://play.google.com/store/apps/details?id=com.bluntllama.fivekind)
+5-Dice
 ======
 
 Kismet game for android.
 
-Its an antique, but [check it out!!](https://play.google.com/store/apps/details?id=com.bluntllama.fivekind)
+Its an antique, but [check it out!!](https://www.apkmonk.com/download-app/com.bluntllama.fivekind/4_com.bluntllama.fivekind_2013-08-02.apk/)
